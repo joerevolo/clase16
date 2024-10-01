@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de multiplicar</title>
+</head>
+<body>
+    <div>
+        <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/blue-mathematics-google-classroom-banner-design-template-64e5d3a7fecfcec23715e41f980c1dab_screen.jpg?ts=1613983242" alt="">
+
+    </div>
+    <h1>Tabla de multiplicar</h1>
+    <hr>
+    <h3>Ingresa un numero</h3>
+    <table>
+        <td>
+            <tr>Numero</tr>
+            <tr><input type="text" name="" id="txtNum"></tr>
+        </td>
+        <br>
+        <td>
+            <tr>
+                <input type="button" onclick="tabla();" value="Calcular">
+            </tr>
+            <tr>
+                <input type="button" onclick="nuevo();" value="nuevo">
+            </tr>
+        </td>
+    </table>
+    <div id="zona">
+    </div>
+
+    <script>
+        function tabla(){
+            //obtener el numero que voy a trabajar
+            let n= parseInt(document.getElementById('txtNum').value); 
+
+            for (let k=1; k<=12;k++){
+                document.getElementById('zona').innerHTML = document.getElementById('zona').innerHTML + '<br>' + n+'x'+k+'='+ (n*k);
+
+            }
+        }
+        function nuevo(){
+            document.getElementById=('txtNum').value=''
+            document.getElementById=('zona').value=''
+        }
+    </script>
+    
+</body>
+</html>

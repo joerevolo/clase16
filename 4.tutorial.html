@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplicacion</title>
+    <style>
+        table{
+            margin: auto;
+            width: 30%;
+            border: 2px black solid;
+            padding: 10px;
+
+        }
+        .boton{
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        input[type=text]{
+            padding: 10px;
+            font-size: medium;
+        }
+
+    </style>
+</head>
+<body >
+    <audio autoplay loop>
+        <source src="https://youtu.be/oUdAUHxEwZU?si=iJFfrvYyBbfPQOKo" type="audio/mpeg">
+    </audio>
+    <div style="text-align: center;">
+        <img width="70%" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/blue-mathematics-google-classroom-banner-design-template-64e5d3a7fecfcec23715e41f980c1dab_screen.jpg?ts=1613983242" alt="">
+    </div>
+    <h1 style="text-align: center;">TABLA DE MULTIPLICAR</h1>
+    <table>
+        <tr>
+            <td>Numero</td>
+            <td><input type="text" name="" id="txtNum"></td>
+        </tr>
+        <tr>
+            <td><input class="boton" type="button" onclick="calcular();" value="calcular"></td>
+            <td><input class="boton" type="button" onclick="nuevo();" value="nuevo"></td>
+        </tr>     
+        <tr>
+            <td>
+                <div id="zona" style="font-size:22px;padding:12px;">
+
+                </div>
+            </td>
+            <td>
+                <img src="img/1.jpg" width="300px" alt="" id="num">
+                
+            </td>
+        </tr>
+
+        
+
+    </table>
+
+    <script>
+        function calcular(){
+            document.getElementById('zona').innerHTML ='';
+            //obtener el numero que voy a trabajar
+            let n= parseInt(document.getElementById('txtNum').value); 
+            if (n >=13){
+                document.getElementById('num').src="img/equis.png"
+            }else{
+                for (let k=1; k<=12;k++){
+                document.getElementById('zona').innerHTML = document.getElementById('zona').innerHTML + '<br>' + n+'<span style="color: red;"><b> x </b></span>'+k+'<span style="color: red;"><b> = </b></span>'+ (n*k);
+            }   
+            }
+
+            
+            switch (n){
+                case 1:
+                    document.getElementById('num').src="img/1.jpg"
+                    break;
+                case 2:
+                    document.getElementById('num').src="img/2.jpg"
+                    break;
+                case 3:
+                    document.getElementById('num').src="img/descarga.png"
+                    break;
+                    
+            }
+        }
+        function nuevo(){
+            document.getElementById('txtNum').value='';
+            document.getElementById('zona').innerHTML ='';
+        } 
+    </script>
+
+    
+</body>
+</html>
